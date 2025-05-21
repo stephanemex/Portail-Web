@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Intranet</title>
+    <!-- Chargement du CSS externe -->
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-workplace">
+        <!-- Conteneur principal -->
+        <div class="workplace-brand">
+            <!-- Logo principal -->
+            <img src="img/workplace_logo.png" alt="WorkPlace Logo" class="workplace-logo">
+            <h1 class="workplace-title">orkPlace</h1>
+        </div>
+    
+        <!-- Léman Bleu sous WorkPlace -->
+        <div class="leman-bleu">
+            <p>Léman Bleu</p>
+            <img src="img/Logo_LB.png" alt="Logo Léman Bleu" class="logo-leman">
+        </div>
+    
+        <!-- Description -->
+        <p class="workplace-tagline">Votre portail professionnel pour accéder à vos outils en un clic.</p>
+    </header>     
+
+    <div class="container">
+        <div class="tool-list">
+            <!-- Bouton 1 -->
+            <a href="PrimeTime/PrimeTime-Hub/index.html" class="tool-link">
+                <div class="tool-item">
+                    <img src="img/PrimeTime_Hub_Blue.png" alt="PrimeTime Hub">
+                    <h3>PrimeTime Hub</h3>
+                    <span class="tooltip">La suite d'outils PrimeTime vous permet de gérer <br>
+                        <ul>
+                            <li>Les droits d'auteurs</li>
+                            <li>Les rapports SSA</li>
+                            <li>Le découpage des émissions et les rapports d'audience</li>
+                            <li>L'analyse et l'exploration des programmes</li>
+                        </ul>
+                    </span>
+                </div>
+            </a>
+            <!-- Bouton 2 -->
+            <a href="https://www.lemanbleu.ch" class="tool-link" target="_blank">
+                <div class="tool-item">
+                    <img src="img/Logo_LB.png" alt="Site Léman Bleu">
+                    <h3>Léman Bleu</h3>
+                    <span class="tooltip">Découvrez les actualités et programmes de Léman Bleu sur notre site www.lemanbleu.ch</span>
+                </div>
+            </a>
+            <!-- Bouton TV : nouveau lien vers la page des programmes TV -->
+            <a href="tv-programmes.html" class="tool-link">
+                <div class="tool-item">
+                    <img src="img/tv_icon.png" alt="Programme TV">
+                    <h3>Programme TV</h3>
+                    <span class="tooltip">Consultez le programme, recherchez votre émission</span>
+                </div>
+            </a>
+
+            <a href="xml_cleaner.html" class="tool-link">
+                <div class="tool-item">
+                    <img src="img/cleaner_icon.png" alt="Programme TV">
+                    <h3>Program Cleaner</h3>
+                    <span class="tooltip">Nettoyer les fichiers xml avant envoie sur le site</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <img src="img/Logo_LB.png" alt="Logo Intranet" class="logo">
+        <p>Léman Bleu - </p>
+        <span>
+            Développé par Stéphane Mex. Tous droits réservés © <span id="current-year"></span>
+        </span>
+    </footer>
+
+    <script>
+        // Insère l'année actuelle dans le footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme TV</title>
+  <link rel="stylesheet" href="/CSS/main.css">
+  <link rel="stylesheet" href="/CSS/tv-programe.css">
+  <link rel="stylesheet" href="PrimeTime/CSS/global.css">
+  <!-- Vous pouvez garder ici vos styles spécifiques ou les déplacer dans tv-programe.css -->
+  <style>
+    /* Vous pouvez aussi inclure ici des styles supplémentaires si besoin */
+  </style>
+</head>
+<body>
+  <!-- Header identique à celui du portail -->
+  <header class="header-workplace">
+    <div class="workplace-brand">
+      <img src="/img/workplace_logo.png" alt="WorkPlace Logo" class="workplace-logo">
+      <h1 class="workplace-title">orkPlace</h1>
+    </div>
+    <div class="leman-bleu">
+      <p>Léman Bleu</p>
+      <img src="/img/Logo_LB.png" alt="Logo Léman Bleu" class="logo-leman">
+    </div>
+    <p class="workplace-tagline">Votre portail professionnel pour accéder à vos outils en un clic.</p>
+    <nav class="nav-buttons">
+      <a href="http://192.168.3.253:85/index.html" class="nav-btn">Retour au Portail</a>
+    </nav>
+  </header>
+
+  <!-- Contenu principal -->
+  <div class="container_prog">
+    <h2 class="title-with-logo">
+      Programme TV 
+      <img src="/img/Logo_LB.png" alt="Logo" class="logo">
+    </h2>
+    <!-- Zone des filtres -->
+    <div class="menu">
+      <div class="filters">
+        <div class="day-filter">
+          <div class="day-filter-bg"></div> <!-- Fond mobile -->
+          <button data-day="all" class="active">Semaine</button>
+          <button data-day="lundi">Lundi</button>
+          <button data-day="mardi">Mardi</button>
+          <button data-day="mercredi">Mercredi</button>
+          <button data-day="jeudi">Jeudi</button>
+          <button data-day="vendredi">Vendredi</button>
+          <button data-day="samedi">Samedi</button>
+          <button data-day="dimanche">Dimanche</button>
+        </div>
+        <div class="filters-wrapper">
+          <div class="week-filter">
+              <label for="weekSelector">Semaine :</label>
+              <select id="weekSelector"></select>
+          </div>
+          <div class="time-filter">
+              <label for="timeRange">Plage horaire :</label>
+              <select id="timeRange">
+                  <option value="all">Toutes les plages horaires</option>
+                  <option value="0-2">00h - 02h</option>
+                  <option value="2-4">02h - 04h</option>
+                  <option value="4-6">04h - 06h</option>
+                  <option value="6-8">06h - 08h</option>
+                  <option value="8-10">08h - 10h</option>
+                  <option value="10-12">10h - 12h</option>
+                  <option value="12-14">12h - 14h</option>
+                  <option value="14-16">14h - 16h</option>
+                  <option value="16-18">16h - 18h</option>
+                  <option value="18-20">18h - 20h</option>
+                  <option value="20-22">20h - 22h</option>
+                  <option value="22-24">22h - 24h</option>
+              </select>
+          </div>
+      </div>
+        <div class="search-wrapper">
+          <div class="search-container">
+              <input type="text" id="searchInput" placeholder="Rechercher..." maxlength="50">
+              <span class="search-icon">🔍</span>
+          </div>
+          <label class="strict-search-label">
+              <input type="checkbox" id="strictSearch"> Recherche stricte
+          </label>
+        </div>
+      </div>
+    </div>
+ 
+    <div id="programContainer"></div>
+  </div>
+  
+  <footer>
+    <img src="/img/Logo_LB.png" alt="Logo Intranet" class="logo">
+    <p>Léman Bleu - </p>
+    <span>Développé par Stéphane Mex. Tous droits réservés © <span id="current-year"></span></span>
+</footer>
+
+<script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+
+  <!-- Inclusion du fichier JavaScript externe -->
+  <script defer src="JS/tv-programme.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+  <script src="globals.js"></script> 
+</body>
+</html>

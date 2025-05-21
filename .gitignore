@@ -1,0 +1,13 @@
+.DS_Store
+.vscode/
+.idea/
+*.log
+*.tmp
+*.bak
+dist/
+build/
+.cache/
+.env
+.env.local
+.env.development
+.env.production

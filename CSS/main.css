@@ -1,0 +1,231 @@
+/* Styles globaux */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #454545;
+}
+
+/* Header principal */
+.header-workplace {
+    background:  #34495e;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Légère ombre */
+}
+
+/* Conteneur WorkPlace */
+.workplace-brand {
+    display: flex; /* Affiche logo et titre côte à côte */
+    align-items: center; /* Aligne verticalement */
+    justify-content: center; /* Centre horizontalement */
+    margin-bottom: 15px; /* Espacement avec le contenu en dessous */
+}
+
+.workplace-title{
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif; /* Police Arial Rounded */
+}
+
+/* Logo WorkPlace */
+.workplace-logo {
+    width: 70px; /* Taille du logo */
+    height: auto;
+}
+
+/* Section Léman Bleu */
+.leman-bleu {
+    display: flex; /* Affiche le texte et le logo Léman Bleu côte à côte */
+    align-items: center; /* Aligne verticalement */
+    justify-content: center; /* Centre horizontalement */
+    margin-bottom: 15px; /* Espacement avec la tagline */
+    margin-top: -39px;
+    margin-left: 34px;
+}
+
+/* Texte Léman Bleu */
+.leman-bleu p {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif; /* Police Arial Rounded */
+    font-size: 0.7em; /* Taille du texte */
+    color: #dcdcdc; /* Couleur légèrement différente du blanc */
+    margin: 0;
+}
+
+/* Logo Léman Bleu */
+.logo-leman {
+    width: 25px; /* Taille du logo Léman Bleu */
+    height: auto;
+}
+
+/* Tagline sous le header */
+.workplace-tagline {
+font-family: 'Arial Rounded MT Bold', Arial, sans-serif; /* Police Arial Rounded */
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: #ecf0f1; /* Texte plus clair */
+    font-style: italic; /* Style distinct */
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Flexbox pour centrer les enfants */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+}
+/* Liste des outils */
+
+/* Conteneur de la liste des outils */
+.tool-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille fluide */
+    gap: 20px; /* Espacement entre les boutons */
+    justify-content: center; /* Centre les boutons si moins de 3 par ligne */
+    margin: 20px auto; /* Marge globale */
+    padding: 20px;
+    max-width: 1200px; /* Largeur maximale du conteneur */
+}
+
+a.tool-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block; /* Important pour que le lien enveloppe correctement le div */
+}
+
+/* Style pour chaque bouton (div outil) */
+.tool-item {
+    width: 180px; /* Largeur fixe */
+    height: 180px; /* Hauteur fixe */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    background: #f7f7f7;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Inclut la bordure dans les dimensions fixes */
+}
+
+.tool-item img {
+    max-width: 40%; /* Ajuste la taille de l'image à l'intérieur du bouton */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.tool-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.tool-item:hover {
+    background-color: #2c2c2c;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Effet de survol pour un peu de dynamisme */
+}
+
+/* Ajout de styles pour le bouton au survol */
+a.tool-link:hover .tool-item {
+    cursor: pointer;
+}
+
+
+/* Infobulle cachée par défaut */
+.tool-item .tooltip {
+    visibility: hidden; /* Cachée par défaut */
+    opacity: 0; /* Transparent au départ */
+    position: absolute; /* Position absolue pour ne pas décaler le layout */
+    bottom: 110%; /* Positionner au-dessus du bouton */
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    color: #fff; /* Texte blanc */
+    padding: 10px 15px; /* Marge interne pour le texte */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 14px; /* Taille de texte */
+    text-align: left; /* Justifie le texte à gauche */
+    white-space: normal; /* Permet les retours à la ligne */
+    z-index: 1000; /* Priorité sur les autres éléments */
+    transition: opacity 0.3s ease; /* Effet de transition */
+    width: 250px; /* Largeur fixe pour un meilleur rendu */
+}
+
+/* Style spécifique à la liste dans l'infobulle */
+.tool-item .tooltip ul {
+    margin: 10px 0; /* Espace autour de la liste */
+    padding-left: 20px; /* Indentation pour les puces */
+    list-style: disc; /* Style des puces */
+}
+
+.tool-item .tooltip li {
+    margin-bottom: 5px; /* Espacement entre les éléments de la liste */
+}
+
+/* Flèche de l'infobulle */
+.tool-item .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Positionné juste sous la bulle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent; /* Triangle noir */
+}
+
+/* Afficher l'infobulle au survol */
+.tool-item:hover .tooltip {
+    visibility: visible; /* Affiche la bulle */
+    opacity: 1; /* Rendre visible */
+}
+
+
+
+/* Style du footer */
+footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    background:  #34495e;
+    color: white;
+    padding: 10px 20px; /* Limite le padding à des valeurs raisonnables */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 10px; /* Espace entre les éléments */
+}
+
+/* Style spécifique à l'image dans le footer */
+footer img {
+    max-width: 100px; /* Taille maximale de l'image */
+    height: auto; /* Préserve les proportions */
+    display: inline-block; /* S'assure que l'image s'affiche correctement */
+}
+
+/* Style du texte dans le footer */
+footer span {
+    line-height: 1.5; /* Ajuste l'espacement du texte */
+    font-size: 14px;
+}

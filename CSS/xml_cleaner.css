@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+/* 🔹 HEADER */
+.header {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* 🔹 CONTAINER PRINCIPAL */
+.container {
+    max-width: 800px !important;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 TITRES */
+h1, h2 {
+    font-weight: 700;
+    text-align: center;
+    color: #007bff;
+}
+.nav-buttons {
+    display: flex;
+    position: absolute;
+    top: 35px;
+    right: 50px;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to bottom right, #2c3e50, #3498db);
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+    background: linear-gradient(135deg, #0055aa, #0077cc);
+    transform: scale(1.02);
+}
+
+/* ✅ MODALE XML PREVIEW */
+#xmlModal {
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 1rem;
+    overflow: auto;
+  }
+
+  #xmlModal h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  .search-section {
+    margin-bottom: 1rem;
+  }
+  
+  .search-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  .search-line,
+  .replace-line {
+    display: flex;
+    gap: 0.5rem;
+    width: 40%;
+  }
+  
+  .searchField {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+ 
+  .search-line button,
+  .replace-line button {
+    padding: 0.2rem 0.4rem;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+
+  #xmlModal input[type="text"] {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .search-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-actions button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  
+  #replaceText {
+    flex: 1;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+ 
+  #xmlPreviewContent {
+    white-space: pre-wrap;
+    background: #f9f9f9;
+    padding: 0.75rem;
+    border: 1px solid #eee;
+    height: 55vh;
+    overflow: auto;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  /* ✅ SURBRILLANCE des résultats */
+  #xmlPreviewContent mark {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  
+  #xmlPreviewContent mark.active-match {
+    background-color: orange;
+    outline: 2px solid red;
+  }
+  
+  /* Petit bouton bas de modale */
+  #xmlModal button.download-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+/* 🔹 BOUTONS */
+button {
+    margin: 5px 0;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #0055aa;
+    transform: scale(1.02);
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+/* 🔹 TEXTAREA */
+textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* 🔹 LISTE DES MOTS */
+.word-list {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* 🔹 CHAMP AJOUT DE MOTS */
+#newWord {
+    width: 50%;
+    max-width: 300px;
+}
+
+/* 🔹 STRUCTURE DES INPUTS */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* 🔹 TABLEAUX */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 🔹 TABLEAU DES MOTS */
+.word-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.word-table th, .word-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.word-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 🔹 BOUTON SUPPRESSION */
+.word-table td .btn-delete {
+    display: block;
+    margin: auto;
+}
+
+.btn-delete {
+    background-color: #fff;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #d72f40;
+}
+
+/* 🔹 BOUTON AJOUT */
+.btn-add {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+    color: #fff !important;
+}
+
+.collapse {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.collapse.show {
+    display: block;
+}
+
+.btn-toggle {
+    width: 100%;
+    background-color: #ffbf2b;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 15px;
+}
+
+.btn-toggle:hover {
+    background-color: #ffb300eb;
+    color: #484848;
+    transform: scale(1.02);
+}
+
+/* 🔹 FOOTER */
+/* Style du footer */
+footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* Dégradé moderne */
+    color: white;
+    padding: 10px 20px; /* Limite le padding à des valeurs raisonnables */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 10px; /* Espace entre les éléments */
+}
+
+/* Style spécifique à l'image dans le footer */
+footer img {
+    max-width: 100px; /* Taille maximale de l'image */
+    height: auto; /* Préserve les proportions */
+    display: inline-block; /* S'assure que l'image s'affiche correctement */
+}
+
+/* Style du texte dans le footer */
+footer span {
+    line-height: 1.5; /* Ajuste l'espacement du texte */
+    font-size: 14px;
+}

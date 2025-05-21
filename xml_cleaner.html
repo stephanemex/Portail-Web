@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage XML</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/xml_cleaner.css">
+</head>
+<body class="bg-light">
+    <div class="header">
+        Gestionnaire de Nettoyage XML
+        <nav class="nav-buttons">
+          <a href="http://192.168.3.253:85/index.html" class="nav-btn">Retour au Portail</a>
+        </nav>
+    </div>
+       <div class="container">
+        <div class="mb-3">
+            <label class="form-label">Charger un fichier XML :</label>
+            <input type="file" id="xmlFileInput" class="form-control" accept=".xml">
+        </div>
+        
+        <textarea id="xmlContent" class="form-control mb-3" rows="6" readonly></textarea>
+
+        <h3 class="text-center text-secondary">Liste des mots à exclure :</h3>
+        <button class="btn btn-toggle" onclick="toggleWordList()">Afficher/Masquer les mots-clés</button>
+        <div id="wordListContainer" class="collapse">
+            <table class="table table-bordered word-table">
+                <thead>
+                    <tr>
+                        <th>Mot clé à Filtrer</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="wordList"></tbody>
+            </table>
+        
+            <div class="input-group mb-3">
+                <input type="text" id="newWord" class="form-control" placeholder="Ajouter un mot">
+                <button class="btn btn-add" onclick="addWord()">Ajouter</button>
+            </div>
+        </div>
+        
+        <div class="input-group mb-3">
+            <input type="text" id="newWord" class="form-control" placeholder="Ajouter un mot">
+            <button class="btn btn-add" onclick="addWord()">Ajouter</button>
+        </div>
+       
+        <button id="cleanXmlBtn" class="btn btn-primary w-100 mb-2">Nettoyer XML</button>
+        <button id="downloadXmlBtn" class="btn btn-secondary w-100">Télécharger XML nettoyé</button>
+       
+        <h3 class="text-center mt-4">Éléments nettoyés :</h3>
+        <div id="cleanedResults" class="table-container table-responsive"></div>
+    </div>
+</div>
+
+<div id="xmlModal">
+    <button id="closeXmlBtn" style="float:right;">❌ Fermer</button>
+    <h3>Aperçu XML</h3>
+  
+    <div class="search-section">
+      <label for="xmlSearch">Rechercher dans le XML :</label>
+      <div class="search-line">
+        <input class="searchField" type="text" id="xmlSearch" oninput="highlightXml()">
+        <button id="gotoPrevMatchBtn">⬅️</button>
+        <button id="gotoNextMatchBtn">➡️</button>
+      </div>
+    </div>
+  
+    <div class="search-section">
+      <label for="replaceText">Texte de remplacement :</label>
+      <div class="replace-line">
+        <input class="searchField" type="text" id="replaceText">
+        <button id="replaceAllBtn">Remplacer tout</button>
+      </div>
+    </div>
+  
+    <pre id="xmlPreviewContent"></pre>
+  
+    <button class="download-btn" onclick="downloadXml()">📥 Télécharger</button>
+  </div>
+
+      <!-- Footer identique -->
+  <footer>
+    <img src="img/Logo_LB.png" alt="Logo Intranet" class="logo">
+    <span>Léman Bleu - Développé par Stéphane Mex. Tous droits réservés © <span id="current-year"></span></span>
+  </footer>
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="JS/xmlFormatter.js"></script>
+  <script defer src="JS/xml_cleaner.js"></script>
+
+</body>
+</html>

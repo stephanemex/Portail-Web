@@ -1,0 +1,518 @@
+h2 {
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.title-with-logo {
+  display: flex;
+  align-items: center; /* Alignement vertical */
+  gap: 10px; /* Espacement entre le texte et le logo */
+}
+
+.title-with-logo img {
+  height: 70px; /* Ajuste la hauteur pour s'adapter au texte */
+  margin-left: -25px;
+}
+
+.logo-leman {
+  width: 25px;
+  height: auto;
+  margin-top: 2px;
+}
+
+/* 🔹 Amélioration des boutons de navigation */
+.nav-buttons {
+  display: flex !important;
+  position: absolute !important; /* Passe de fixed à absolute */
+  bottom: 10px; /* S'assure que le bouton reste en bas du header */
+  right: 20px; /* Distance du bord droit */
+  justify-content: center;
+  gap: 15px;
+}
+
+.header-workplace {
+  position: relative; /* Permet à .nav-buttons (en absolute) de se positionner relativement à lui */
+  padding-bottom: 50px; /* Ajuste pour laisser de la place au bouton */
+}
+
+.workplace-title {
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  padding-top: 10px;
+  }
+
+.nav-btn {
+  margin-top:-5px;
+  margin-left: -1100px;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to bottom right, #2c3e50, #3498db);
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #0055aa, #0077cc);
+  transform: scale(1.05); /* Légère animation au survol */
+}
+
+/* 🔹 Conteneur principal avec effet "carte" */
+.container_prog {
+  width: 90%;
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 35px;
+  background: #2c3f50;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.container_prog:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Menu et filtres */
+.menu {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 15px 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+/* 🔹 Style des filtres */
+.menu .filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 🔹 Conteneur des boutons */
+.day-filter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  gap: 10px; /* Espace entre les boutons */
+  align-items: center;
+}
+
+/* 🔹 Boutons des jours */
+.day-filter button {
+  position: relative;
+  z-index: 5; /* Les boutons restent au-dessus du fond */
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 🔹 Effet visuel pour le bouton actif */
+.day-filter button.active {
+  font-weight: bold;
+  color: #2c80da; /* Bleu pour le bouton actif */
+}
+
+/* 🔹 Fond mobile sous le bouton actif */
+
+.day-filter-bg {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  background-color: #2c80da;
+  border-radius: 30px;
+  transition: left 0.3s ease-in-out, width 0.3s ease-in-out; /* Transition fluide */
+  z-index: 1; /* Derrière les boutons */
+}
+
+/* 🔹 Sélecteur des plages horaires */
+.time-filter select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.time-filter select:focus {
+  border-color: #1b4d82;
+  outline: none;
+}
+
+/* 🔹 Conteneur de la barre de recherche + case à cocher */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  margin-right: 100px;
+}
+
+/* 🔹 Conteneur de la barre de recherche */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Taille raisonnable */
+  border: 2px solid #0077cc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Champ de recherche */
+#searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* 🔹 Icône de loupe */
+.search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #0077cc;
+  cursor: pointer;
+}
+
+/* 🔹 Effet au focus */
+.search-container:focus-within {
+  border-color: #0055aa;
+  box-shadow: 0 0 5px rgba(0, 85, 170, 0.5);
+}
+
+/* 🔹 Label de la recherche stricte */
+.strict-search-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top:-5px;
+}
+
+/* 🔹 Case à cocher */
+#strictSearch {
+  margin-right: 5px;
+  transform: scale(1.2); /* Agrandir légèrement */
+  cursor: pointer;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 600px) {
+  .search-wrapper {
+      flex-direction: column; /* Passer en colonne si trop petit */
+      align-items: flex-start;
+  }
+}
+
+/* 🔹 Conteneur général des filtres */
+.filters-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: flex-start; /* Aligner à gauche */
+  flex-wrap: wrap; /* Permettre un retour à la ligne si nécessaire */
+  margin-bottom: 15px;
+}
+
+/* 🔹 Conteneur des statistiques de recherche */
+#searchStats {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #2c3e50; /* Même couleur que le conteneur principal */
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Titre du résumé des résultats */
+#searchStats h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #3498db; /* Bleu pour le contraste */
+}
+
+/* 🔹 Liste des diffusions par fichier */
+#searchStats ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🔹 Élément de liste */
+#searchStats li {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* 🔹 Effet au survol */
+#searchStats li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Responsive */
+@media (max-width: 600px) {
+  #searchStats {
+    max-width: 90%;
+    padding: 12px;
+  }
+  #searchStats h3 {
+    font-size: 18px;
+  }
+  #searchStats li {
+    font-size: 14px;
+  }
+}
+
+/* 🔹 Style général des sélecteurs */
+.week-filter,
+.time-filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px 12px;
+  border: 2px solid #0077cc;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Labels des filtres */
+.week-filter label,
+.time-filter label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 8px;
+  min-width: 100px;
+}
+
+/* 🔹 Style des dropdowns */
+.week-filter select,
+.time-filter select {
+  appearance: none; /* Supprime le style natif */
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0077cc;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+/* 🔹 Ajout d'une icône personnalisée pour les dropdowns */
+.week-filter::after,
+.time-filter::after {
+  content: "▼";
+  font-size: 12px;
+  color: #0077cc;
+  position: absolute;
+  right: 7px;
+  top: 15px;
+  pointer-events: none; /* L'icône ne gêne pas l'utilisation */
+}
+
+/* 🔹 Effet au focus */
+.week-filter:focus-within,
+.time-filter:focus-within {
+  border-color: #0055aa;
+  box-shadow: 0 0 5px rgba(0, 85, 170, 0.5);
+}
+
+/* 🔹 Responsive */
+@media (max-width: 600px) {
+  .filters-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
+/* 🔹 Conteneur des programmes */
+#programContainer {
+  margin: 20px auto;
+  max-width: 1100px;
+}
+
+/* 🔹 Affichage en grille des programmes */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  gap: 15px; /* Espacement entre les éléments */
+  margin-top: 10px;
+}
+
+/* 🔹 S'assurer que chaque programme a un bon alignement */
+.program {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* 🔹 Ajustement pour l'affichage mobile */
+@media (max-width: 768px) {
+  .program-grid {
+      grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+  }
+}
+
+/* 🔹 Section de chaque journée */
+.day-section {
+  width: 100%; /* Utilise toute la largeur disponible */
+  min-width: 1100px; /* Largeur minimale assurée */
+  max-width: 1400px; /* Augmenter la largeur max pour les grands écrans */
+  margin: 25px auto; /* Centrer et espacer entre les blocs */
+  padding: 20px; /* Un padding plus généreux */
+  background: #f2f2f2; /* Fond blanc pour un look moderne */
+  border-radius: 10px; /* Angles arrondis */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Ombre douce */
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden; /* Évite que le contenu dépasse */
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1200px) {
+  .day-section {
+      min-width: unset; /* Désactiver le min-width sur les écrans plus petits */
+      max-width: 95%; /* Ajuster pour les tablettes */
+      padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .day-section {
+      max-width: 95%; /* Largeur ajustée pour petits écrans */
+      padding: 15px;
+  }
+}
+
+/* 🔹 Programme TV */
+.program {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.program:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Image de l'émission */
+.program-thumbnail {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 15px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 Infos de l'émission */
+.program-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 🔹 Heure */
+.program-info .time {
+  font-weight: bold;
+  font-size: 14px;
+  color: #226fc1;
+  margin-bottom: 5px;
+}
+
+/* 🔹 Titre */
+.program-info .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.thematique {
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 5px;
+}
+
+/* 🔹 Description */
+.program-info .description {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .nav-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .program {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .program-thumbnail {
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 10px;
+  }
+
+  .program-info {
+      text-align: center;
+  }
+
+  .menu .filters {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
